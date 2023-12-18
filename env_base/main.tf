@@ -1,0 +1,37 @@
+# service_account / main.tf
+provider "google" {
+  project     = var.gcp_project
+  region      = var.gcp_region
+  zone        = var.gcp_zone
+}
+
+module "service_account" {
+  source = "./service_account"
+  gcp_project = var.gcp_project
+}
+
+# module "artifact" {
+#   source = "./artifact_registry_repo"
+#   gcp_region = var.gcp_region
+#   docker-repo = var.docker-repo
+# }
+
+module "network" {
+  source       = "./network"
+  subnet_cidr = var.subnet_cidr
+}
+
+module "firewall" {
+  source           = "./firewall"
+  network_self_link = module.network.network_self_link
+  firewall_source = var.firewall_source
+}
+
+module "cluster" {
+  source    = "./cluster"
+  cluster_name = var.cluster_name
+  gcp_region = var.gcp_region
+  network_name = module.network.network_name
+  sa_email = module.service_account.sa_email
+  subnet_name = module.network.subnet_name
+}

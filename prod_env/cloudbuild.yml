@@ -1,0 +1,8 @@
+steps:
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=./prod_env/nginx.yml
+  - --location=europe-west1
+  - --cluster=cluster-eck-1
+timeout: 660s

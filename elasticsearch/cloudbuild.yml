@@ -1,0 +1,8 @@
+steps:
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=./elasticsearch/elasticsearch.yml
+  - --location=europe-west1 
+  - --cluster=cluster-1
+timeout: 660s
