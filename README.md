@@ -5,11 +5,12 @@
 Il est demande de mettre en place une solution de centralisation et de gestion des logs pour le cluster Kubernetes et les applications qu’il contient.
 
 L'ensemble du repot permet de déployer Elastic Cloud for Kubernetes sur un cluster GKE.
-Le repot est composé de 8 dossier:
+Le repot est composé de 1 dossier:
 
 - Le dossier **fleet** est lui meme compose de :
   - d'un fichier **fleet.yml** qui déploie elastic, kibana, fleet et nginx
   - d'un fichier **cloudbuild.yml** qui permets de lancer le déploiement avec cloudbuild
+- Le script **prod.sh** qui ce connecte au cluster, ajoute les droits au compte de service **<numero_de_projet>@cloudbuild.gserviceaccount.com** et lance le deploiement de ECK et Nginx
 
 ## Prerequis
 
