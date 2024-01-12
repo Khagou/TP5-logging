@@ -27,10 +27,14 @@ Le repot est composé de 1 dossier:
   - Ouvrir l'éditeur et modifier l'ensemble des variable du script **prod.sh**
   - DAns le fichier cloudbuild.yml modifier la location et le cluster
   - Ouvrir un terminal dans l'editeur et lancer la commande 
-      ```sh prod.sh```
+      ```
+      sh prod.sh
+      ```
   - Dans la console GCP accéder aux charges de travail de votre cluster et attendez que tout les **Etat** soient vert
   - Lancez maintenant la commande suivatent pour recupérer le mot de passe pour accéder à Kibana
-      ```kubectl get secret elasticsearch-quickstart-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo```
+      ```
+      kubectl get secret elasticsearch-quickstart-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
+      ```
   - Dans vos charges de travail ouvrez la suivante ***kibana-quickstart-kb*** et dans la section **Services associés** cliquez sur le point de terminaison, 
      une nouvelle page s'ouvre avec une erreur cette page ne fonctionne pas rajouter https:// au debut de l'url tel que par exemple **https://34.16.25.221:5601/**.
   - Identifiant Kibana
