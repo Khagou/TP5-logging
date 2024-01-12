@@ -1,0 +1,16 @@
+Requis:
+Cloudbuild api
+Cluster k8s 3 nodes e2-standard-2
+bucket
+
+Variables a changer:
+cloudbuild.yml -> cluster et region
+prod.sh -> toutes les variables
+
+etapes:
+1. Verifier si cloudbuild est activé si non activer
+2. Verifier si cluster k8s dispose de 3 nodes e2-standard-2, si non le creer
+3. Creer un bucket
+4. Changer les variables des fichiers cloudbuild.yml et prod.sh
+5. ce placer a la racine du repo et lancer "sh prod.sh"
+6. recup mdp kibana kubectl get secret elasticsearch-quickstart-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo

@@ -1,0 +1,8 @@
+steps:
+- name: "gcr.io/cloud-builders/gke-deploy"
+  args:
+  - run
+  - --filename=./fleet/fleet.yml
+  - --location=us-central1-c # Change me
+  - --cluster=cluster-1 # Change me
+timeout: 660s
