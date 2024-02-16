@@ -29,4 +29,3 @@ sleep 60
 
 # 6- Deploiement avec l'outils CloudBuild de GCP
 gcloud builds submit --region=$REGION --project=$PROJET --config ./fleet/cloudbuild.yml --gcs-log-dir="gs://$BUCKET/elastic"
-gcloud builds submit --region=us-central1 --project=tp-log-411012 --config ./fleet/cloudbuild.yml --gcs-log-dir="gs://tp-log/elastic"
