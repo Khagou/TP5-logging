@@ -31,7 +31,7 @@ Le repot est composé de 1 dossier:
       sh prod.sh
       ```
   - Dans la console GCP accéder aux charges de travail de votre cluster et attendez que tout les **Etat** soient vert
-  - Lancez maintenant la commande suivatent pour recupérer le mot de passe pour accéder à Kibana
+  - Lancez maintenant la commande suivate pour recupérer le mot de passe pour accéder à Kibana
       ```
       kubectl get secret elasticsearch-quickstart-es-elastic-user -o=jsonpath='{.data.elastic}' | base64 --decode; echo
       ```
